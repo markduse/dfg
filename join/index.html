@@ -47,6 +47,14 @@
     .card { background: var(--bg3); border: 1px solid rgba(201,164,106,.1); border-radius: 3px; padding: 32px 28px; transition: all .3s ease; }
     .card:hover { border-color: rgba(201,164,106,.3); transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,.45); }
 
+
+    /* ── HERO VALUE PROP PANEL ── */
+    .hero-vp-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px 24px; border-bottom: 1px solid rgba(201,164,106,.07); transition: background .3s; }
+    .hero-vp-item:hover { background: rgba(201,164,106,.04); }
+    .hero-vp-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .hero-vp-title { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 5px; letter-spacing: .01em; }
+    .hero-vp-desc { font-size: 12px; color: var(--text-muted); line-height: 1.65; }
+
     /* NAV */
     #jnav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; transition: all .4s; }
     #jnav.scrolled { background: rgba(7,7,14,.96); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,164,106,.1); }
@@ -288,26 +296,46 @@
           <a class="btn-ghost" href="#jhow">See How It Works</a>
         </div>
         <div class="hero-stats anim d4">
-          <div><div class="hstat-val">$16.8M</div><div class="hstat-lbl">Issued in 2025</div></div><div><div class="hstat-val">$12.6M</div><div class="hstat-lbl">Issued in 2024</div></div>
-          <div><div class="hstat-val">$15,300</div><div class="hstat-lbl">Adam · First full month</div></div>
-          <div><div class="hstat-val">$90,000</div><div class="hstat-lbl">Martha · First 90 days</div></div>
+          <div><div class="hstat-val">$16.8M</div><div class="hstat-lbl">Issued in 2025</div></div>
+          <div><div class="hstat-val">145%</div><div class="hstat-lbl">Max Commission Contract</div></div>
+          <div><div class="hstat-val">100+</div><div class="hstat-lbl">Agents Nationwide</div></div>
+          <div><div class="hstat-val">$0</div><div class="hstat-lbl">Cost to Join</div></div>
         </div>
       </div>
       <div class="hero-right anim d3">
-        <div class="hero-result-card">
-          <div class="hrc-tag">Adam · New Agent</div>
-          <div class="hrc-val">$15,300</div>
-          <div class="hrc-period">in his first full month</div>
-          <div class="hrc-note">Transitioned from a capped salary job. Followed the 300-dial framework from day one.</div>
-        </div>
-        <div class="hero-result-card">
-          <div class="hrc-tag">Martha · New Agent</div>
-          <div class="hrc-val">$90,000</div>
-          <div class="hrc-period">in her first 90 days</div>
-          <div class="hrc-note">Onboarded Monday. In the lead rotation by Wednesday. Issued her first $5K week before Sunday.</div>
-        </div>
-        <div style="background:var(--bg3);border:1px solid rgba(201,164,106,.1);border-radius:3px;padding:20px 24px;">
-          <div style="font-size:11px;color:var(--text-dim);line-height:1.7">Our active full-time producers average <strong style="color:var(--gold)">$10,000–$15,000 per month.</strong> This is a high-income professional career.</div>
+        <div style="background:var(--bg3);border:1px solid rgba(201,164,106,.15);border-radius:3px;overflow:hidden;">
+          <div style="padding:20px 24px 16px;border-bottom:1px solid rgba(201,164,106,.1);">
+            <div style="font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:4px">What you get at DFG</div>
+            <div style="font-size:12px;color:var(--text-dim)">From day one — no exceptions.</div>
+          </div>
+          <div class="hero-vp-item">
+            <div class="hero-vp-icon">💰</div>
+            <div>
+              <div class="hero-vp-title">Contracts up to 145%</div>
+              <div class="hero-vp-desc">One of the highest commission rates in the industry. We invest in our agents because your success is our success. Bonuses on top of base comp.</div>
+            </div>
+          </div>
+          <div class="hero-vp-item">
+            <div class="hero-vp-icon">🎯</div>
+            <div>
+              <div class="hero-vp-title">Training from Active Closers</div>
+              <div class="hero-vp-desc">Not recorded videos. Not theory. Live coaching from producers writing business today — people who built their income on the same system you'll use.</div>
+            </div>
+          </div>
+          <div class="hero-vp-item">
+            <div class="hero-vp-icon">📋</div>
+            <div>
+              <div class="hero-vp-title">Inbound Leads from Day One</div>
+              <div class="hero-vp-desc">We own Pinnacle Lead Shop — our proprietary lead generation operation. No cold calling strangers. You dial people who asked for help.</div>
+            </div>
+          </div>
+          <div class="hero-vp-item" style="border-bottom:none;">
+            <div class="hero-vp-icon">📈</div>
+            <div>
+              <div class="hero-vp-title">No Ceiling. Ever.</div>
+              <div class="hero-vp-desc">Scale as far as your work ethic takes you. Override income, renewals, and team building mean your income can compound — not cap — over time.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
