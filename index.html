@@ -53,7 +53,7 @@
       color: var(--white); font-family: 'DM Sans', sans-serif;
       font-size: 13px; font-weight: 600; letter-spacing: .1em;
       text-transform: uppercase; border-radius: 2px; border: none; cursor: pointer;
-      transition: all .25s ease; box-shadow: 0 8px 24px rgba(27,37,88,.2);
+      transition: all .4s ease-in-out; box-shadow: 0 8px 24px rgba(27,37,88,.2);
     }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(27,37,88,.3); }
     .btn-gold {
@@ -62,7 +62,7 @@
       color: var(--navy-deep); font-family: 'DM Sans', sans-serif;
       font-size: 13px; font-weight: 700; letter-spacing: .1em;
       text-transform: uppercase; border-radius: 2px; border: none; cursor: pointer;
-      transition: all .25s ease; box-shadow: 0 8px 24px rgba(201,164,106,.3);
+      transition: all .4s ease-in-out; box-shadow: 0 8px 24px rgba(201,164,106,.3);
     }
     .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(201,164,106,.45); }
     .btn-ghost {
@@ -71,7 +71,7 @@
       border: 1.5px solid rgba(27,37,88,.25);
       font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
       letter-spacing: .1em; text-transform: uppercase; border-radius: 2px; cursor: pointer;
-      transition: all .25s ease;
+      transition: all .4s ease-in-out;
     }
     .btn-ghost:hover { border-color: var(--navy); background: rgba(27,37,88,.04); }
 
@@ -79,23 +79,28 @@
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 900;
       padding: 18px 60px; display: flex; justify-content: space-between; align-items: center;
+      background: rgba(10,15,50,.82); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,164,106,.15);
       transition: all .4s ease;
     }
     #nav.scrolled {
-      background: rgba(248,246,241,.97); backdrop-filter: blur(20px);
+      background: rgba(248,246,241,.98); backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(201,164,106,.2);
       box-shadow: 0 4px 24px rgba(27,37,88,.08);
     }
     .nav-logo { display: flex; align-items: center; gap: 14px; }
     .nav-logo img { width: 44px; height: 44px; border-radius: 50%; }
-    .nav-logo-text .brand { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: var(--navy); letter-spacing: .04em; line-height: 1.1; }
+    .nav-logo-text .brand { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; color: #FFFFFF; letter-spacing: .04em; line-height: 1.1; transition: color .4s; }
+    #nav.scrolled .nav-logo-text .brand { color: var(--navy); }
     .nav-logo-text .sub { font-size: 9px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--navy); opacity: .7; transition: opacity .2s; }
-    .nav-links a:hover { opacity: 1; }
+    .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.9); transition: all .4s ease-in-out; }
+    #nav.scrolled .nav-links a { color: var(--navy); opacity: .75; }
+    .nav-links a:hover { color: var(--gold-light) !important; opacity: 1 !important; }
     .nav-cta { display: flex; gap: 12px; align-items: center; }
     .nav-mobile-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .nav-mobile-btn span { display: block; width: 22px; height: 1.5px; background: var(--navy); transition: all .3s; }
+    .nav-mobile-btn span { display: block; width: 22px; height: 1.5px; background: #FFFFFF; transition: all .3s; }
+    #nav.scrolled .nav-mobile-btn span { background: var(--navy); }
     .mobile-menu {
       display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
       background: var(--navy-deep); z-index: 1000; flex-direction: column;
@@ -177,7 +182,7 @@
     .product-card {
       background: var(--cream); border: 1px solid rgba(27,37,88,.08);
       border-radius: 4px; padding: 32px 28px; position: relative;
-      transition: all .3s ease; cursor: default;
+      transition: all .4s ease-in-out; cursor: default;
     }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(27,37,88,.1); border-color: rgba(201,164,106,.3); }
     .product-card.featured { border-color: var(--gold); }
@@ -316,6 +321,20 @@
       .about-pillars { grid-template-columns: 1fr; }
       .contact-form { padding: 28px 20px; }
     }
+
+    /* ── STATS COUNTER ── */
+    #stats { padding: 80px 60px; background: var(--navy-deep); }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 1100px; margin: 0 auto; }
+    .stat-block { text-align: center; padding: 40px 20px; border-right: 1px solid rgba(201,164,106,.15); }
+    .stat-block:last-child { border-right: none; }
+    .stat-counter { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px,5vw,72px); font-weight: 700; color: var(--gold-light); line-height: 1; letter-spacing: -.02em; }
+    .stat-label { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 12px; font-weight: 500; }
+    @media (max-width: 768px) {
+      #stats { padding: 60px 24px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-block:nth-child(2) { border-right: none; }
+      .stat-block:nth-child(1), .stat-block:nth-child(2) { border-bottom: 1px solid rgba(201,164,106,.15); }
+    }
   </style>
 </head>
 <body>
@@ -401,6 +420,28 @@
   </div>
 </div>
 
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-block anim">
+      <div class="stat-counter" data-target="25" data-suffix="+">0</div>
+      <div class="stat-label">A-Rated Carriers</div>
+    </div>
+    <div class="stat-block anim d1">
+      <div class="stat-counter" data-target="50" data-prefix="$" data-suffix="M+">$0</div>
+      <div class="stat-label">In Coverage Placed</div>
+    </div>
+    <div class="stat-block anim d2">
+      <div class="stat-counter" data-target="10000" data-suffix="+">0</div>
+      <div class="stat-label">Families Protected</div>
+    </div>
+    <div class="stat-block anim d3">
+      <div class="stat-counter" data-target="50" data-suffix=" States">0</div>
+      <div class="stat-label">Nationwide Coverage</div>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="section-alt" id="about">
   <div class="inner">
@@ -454,7 +495,7 @@
         <div class="product-desc">Affordable whole life coverage designed to handle funeral costs, medical bills, and end-of-life expenses — so your family never has to.</div>
         <ul class="product-points">
           <li>No medical exam required</li>
-          <li>Coverage from $5K–$35K</li>
+          <li>Coverage from $5K–$100K</li>
           <li>Premiums never increase</li>
           <li>Pays out in days, not months</li>
         </ul>
@@ -621,6 +662,15 @@
     <div class="team-grid">
       <div class="team-card anim d1">
         <div class="team-photo-wrap">
+          <img class="team-photo" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80" alt="Brandon Dusevic" />
+          <div class="team-photo-frame"></div>
+        </div>
+        <div class="team-name">Brandon Dusevic</div>
+        <div class="team-title">Founder &amp; Partner</div>
+        <div class="team-bio">A core member of the DFG team. Brings dedication and a client-first mindset to every conversation. Serving families across the country.</div>
+      </div>
+      <div class="team-card anim d2">
+        <div class="team-photo-wrap">
           <img class="team-photo" src="assets/mark-headshot.png" alt="Mark Dusevic" />
           <div class="team-photo-frame"></div>
         </div>
@@ -628,32 +678,23 @@
         <div class="team-title">Managing Partner</div>
         <div class="team-bio">Founder of DFG and MPD Investment Group LLC. Built a fully remote, technology-driven operation with proprietary lead generation and AI-assisted agent tools. Final Expense Specialist · IUL Certified · Troy, MI</div>
       </div>
-      <div class="team-card anim d2">
+      <div class="team-card anim d3">
         <div class="team-photo-wrap">
           <img class="team-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Jordan David" />
           <div class="team-photo-frame"></div>
         </div>
         <div class="team-name">Jordan David</div>
         <div class="team-title">Senior Agent</div>
-        <div class="team-bio">$3,500 in production in his first 2 days. A natural closer and team leader in the making. Specializes in final expense and mortgage protection.</div>
+        <div class="team-bio">A natural closer and team leader. Jordan hit the ground running, generating $90,000 in production within his first 3 months. Specializes in final expense and mortgage protection.</div>
       </div>
-      <div class="team-card anim d3">
+      <div class="team-card anim d4">
         <div class="team-photo-wrap">
           <img class="team-photo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Frans Hisenai" />
           <div class="team-photo-frame"></div>
         </div>
         <div class="team-name">Frans Hisenai</div>
         <div class="team-title">Agent</div>
-        <div class="team-bio">$5,000 in her first week. Dialed with discipline, followed the system, and never looked back. Final expense specialist serving clients nationwide.</div>
-      </div>
-      <div class="team-card anim d4">
-        <div class="team-photo-wrap">
-          <img class="team-photo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Brandon Dusevic" />
-          <div class="team-photo-frame"></div>
-        </div>
-        <div class="team-name">Brandon Dusevic</div>
-        <div class="team-title">Agent</div>
-        <div class="team-bio">A core member of the DFG team. Brings dedication and a client-first mindset to every conversation. Serving families across the country.</div>
+        <div class="team-bio">By leveraging our fully remote system, Frans averages $15K a month in production while maintaining the flexibility to be present for his family. A final expense specialist serving clients nationwide.</div>
       </div>
     </div>
   </div>
@@ -779,7 +820,7 @@
           </div>
           <div class="form-group"><label>Tell us about your situation (optional)</label><textarea id="cf-message" placeholder="Age, health considerations, coverage goals…"></textarea></div>
           <button class="btn-primary" style="width:100%;padding:16px" onclick="submitForm()">Submit Request →</button>
-          <div class="form-privacy">🔒 Your information is private and never sold. Duse Financial Group is operated by MPD Investment Group LLC.</div>
+          <div class="form-privacy">By clicking 'Submit Request', I consent to receive recurring automated marketing text messages and phone calls from Duse Financial Group at the number provided. Consent is not a condition of purchase. Msg &amp; data rates may apply. Reply HELP for help and STOP to cancel. View our <a href="https://www.pinnaclepl.com/privacy" style="color:var(--gold);text-decoration:underline">Privacy Policy</a> and <a href="https://www.pinnaclepl.com/terms-of-service" style="color:var(--gold);text-decoration:underline">Terms of Service</a>.</div>
         </div>
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✅</div>
@@ -804,7 +845,7 @@
           </div>
         </div>
         <div class="footer-desc">A nationwide network of independent agents committed to protecting families and building legacies through expert, unbiased life insurance guidance.</div>
-        <div class="footer-partners">A proud partner of Pinnacle Life Agency · MPD Investment Group LLC · 345 Kirts Blvd, Troy MI 48084</div>
+        <div class="footer-partners">A proud partner of Pinnacle Life Agency · MPD Investment Group LLC · 500 Stephenson Hwy, Troy, MI 48083</div>
       </div>
       <div class="footer-col">
         <h4>Products</h4>
@@ -926,17 +967,31 @@
     });
   };
 
+
   // ── COUNTER ANIMATION ──
-  function animateCounter(el, target, suffix) {
-    var start = 0;
-    var duration = 1800;
-    var step = (target / duration) * 16;
-    var timer = setInterval(function () {
-      start = Math.min(start + step, target);
-      el.textContent = Math.floor(start) + suffix;
-      if (start >= target) clearInterval(timer);
-    }, 16);
-  }
+  var counterEls = document.querySelectorAll('.stat-counter');
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (!e.isIntersecting || e.target.dataset.done) return;
+      e.target.dataset.done = '1';
+      var el = e.target;
+      var target = parseInt(el.dataset.target);
+      var prefix = el.dataset.prefix || '';
+      var suffix = el.dataset.suffix || '';
+      var duration = 2000;
+      var startTime = null;
+      function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var current = Math.floor(easeOut(progress) * target);
+        el.textContent = prefix + (target >= 1000 ? current.toLocaleString() : current) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.3 });
+  counterEls.forEach(function(el) { counterObserver.observe(el); });
 })();
 </script>
 </body>
