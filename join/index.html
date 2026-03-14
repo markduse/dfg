@@ -682,16 +682,16 @@
   // ── LINE CHART ──
   (function() {
     var data = [
-      { yr:'Yr 1',  p:80,  o:0,   r:0   },
-      { yr:'Yr 2',  p:140, o:0,   r:0   },
-      { yr:'Yr 3',  p:200, o:0,   r:0   },
-      { yr:'Yr 4',  p:240, o:60,  r:0   },
-      { yr:'Yr 5',  p:255, o:120, r:40  },
-      { yr:'Yr 6',  p:240, o:195, r:90  },
-      { yr:'Yr 7',  p:185, o:265, r:165 },
-      { yr:'Yr 8',  p:135, o:315, r:225 },
-      { yr:'Yr 9',  p:95,  o:345, r:275 },
-      { yr:'Yr 10', p:65,  o:365, r:315 },
+      { yr:'Yr 1',  p:120, o:0,   r:0   },
+      { yr:'Yr 2',  p:175, o:0,   r:0   },
+      { yr:'Yr 3',  p:225, o:0,   r:0   },
+      { yr:'Yr 4',  p:265, o:70,  r:0   },
+      { yr:'Yr 5',  p:280, o:140, r:45  },
+      { yr:'Yr 6',  p:260, o:215, r:100 },
+      { yr:'Yr 7',  p:200, o:285, r:180 },
+      { yr:'Yr 8',  p:150, o:335, r:245 },
+      { yr:'Yr 9',  p:105, o:365, r:300 },
+      { yr:'Yr 10', p:75,  o:390, r:385 },
     ];
     data.forEach(function(d){ d.total = d.p + d.o + d.r; });
 
@@ -711,7 +711,7 @@
 
       var PAD_L = 58, PAD_R = 20, PAD_T = 24, PAD_B = 40;
       var cW = W - PAD_L - PAD_R, cH = H - PAD_T - PAD_B;
-      var maxVal = 800, yTicks = [0,200,400,600,800];
+      var maxVal = 1000, yTicks = [0,200,400,600,800,1000];
       var n = data.length;
 
       function xPos(i) { return PAD_L + (i / (n-1)) * cW; }
