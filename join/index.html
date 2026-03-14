@@ -517,7 +517,8 @@
 
 <script>
 (function () {
-  var SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxidr8ESlE8HPhyNq-lIyT1vCkFg5WZy6G6LEl7ufsIkT97gix0W7MuGb2-vva-mB6E/exec';
+  var SECRET = 'dfg2025submissions';
 
   // NAV SCROLL
   var nav = document.getElementById('jnav');
@@ -613,7 +614,7 @@
     fetch(SHEET_URL, {
       method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ timestamp: new Date().toISOString(), firstName: first, lastName: last, email: email, phone: phone, state: state, licensed: licensed, goal: goal, message: msg, source: 'DFG Agent Application - /join' })
+      body: JSON.stringify({ token: SECRET, timestamp: new Date().toISOString(), firstName: first, lastName: last, email: email, phone: phone, state: state, licensed: licensed, goal: goal, message: msg, source: 'DFG Agent Application - /join' })
     }).catch(function () {}).finally(function () {
       document.getElementById('applyFormWrap').style.display = 'none';
       document.getElementById('applySuccess').style.display = 'block';

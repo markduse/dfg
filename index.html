@@ -847,7 +847,8 @@
 (function () {
   // ── GOOGLE SHEETS ENDPOINT ──
   // Replace with your Apps Script Web App URL after setup
-  var SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+  var SHEET_URL = 'https://script.google.com/macros/s/AKfycbxidr8ESlE8HPhyNq-lIyT1vCkFg5WZy6G6LEl7ufsIkT97gix0W7MuGb2-vva-mB6E/exec';
+  var SECRET = 'dfg2025submissions';
 
   // ── NAV SCROLL ──
   var nav = document.getElementById('nav');
@@ -912,6 +913,7 @@
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        token: SECRET,
         timestamp: new Date().toISOString(),
         firstName: first, lastName: last,
         email: email, state: state,
