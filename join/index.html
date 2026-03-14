@@ -95,7 +95,7 @@
     .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(201,164,106,.12); margin-top: 52px; }
     .step-col { padding: 36px 28px 36px 0; }
     .step-col:not(:last-child) { border-right: 1px solid rgba(201,164,106,.1); }
-    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: rgba(201,164,106,.2); line-height: 1; margin-bottom: 20px; }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 20px; text-shadow: 0 0 40px rgba(201,164,106,.3); }
     .step-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
     .step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
 
@@ -185,6 +185,26 @@
     .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; }
     .d3 { animation-delay: .25s; } .d4 { animation-delay: .35s; }
 
+
+    /* ── DAY IN THE LIFE ── */
+    .daylife-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 48px; border: 1px solid rgba(201,164,106,.12); border-radius: 3px; overflow: hidden; }
+    .daylife-block { padding: 36px 28px; border-right: 1px solid rgba(201,164,106,.1); position: relative; }
+    .daylife-block:last-child { border-right: none; }
+    .daylife-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); opacity: 0; transition: opacity .4s; }
+    .daylife-block:hover::before { opacity: 1; }
+    .daylife-time { font-size: 11px; font-weight: 600; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+    .daylife-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+    .daylife-desc { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
+    .daylife-number { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 700; color: rgba(201,164,106,.07); position: absolute; top: 12px; right: 20px; line-height: 1; }
+
+    /* ── CARRIER LOGOS ── */
+    .carrier-scroll-wrap { overflow: hidden; margin-top: 40px; mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+    .carrier-scroll { display: flex; gap: 12px; animation: carrierScroll 24s linear infinite; width: max-content; }
+    .carrier-scroll:hover { animation-play-state: paused; }
+    .carrier-pill { display: inline-flex; align-items: center; padding: 10px 22px; background: rgba(201,164,106,.06); border: 1px solid rgba(201,164,106,.15); border-radius: 2px; font-size: 12px; font-weight: 500; color: rgba(237,233,223,.6); letter-spacing: .04em; white-space: nowrap; transition: all .3s; flex-shrink: 0; }
+    .carrier-pill:hover { background: rgba(201,164,106,.12); border-color: rgba(201,164,106,.3); color: var(--gold-light); }
+    @keyframes carrierScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media(max-width:960px){ .daylife-grid { grid-template-columns: 1fr; } .daylife-block { border-right: none; border-bottom: 1px solid rgba(201,164,106,.1); } .daylife-block:last-child { border-bottom: none; } }
     /* RESPONSIVE */
     @media (max-width: 960px) {
       #jnav { padding: 16px 24px; }
@@ -256,25 +276,25 @@
         </div>
         <div class="hero-stats anim d4">
           <div><div class="hstat-val">$1.5M+</div><div class="hstat-lbl">Issued in 2024</div></div>
-          <div><div class="hstat-val">$3,500</div><div class="hstat-lbl">Jordan · First 2 days</div></div>
-          <div><div class="hstat-val">$5,000</div><div class="hstat-lbl">Fran · First week</div></div>
+          <div><div class="hstat-val">$15,300</div><div class="hstat-lbl">Adam · First full month</div></div>
+          <div><div class="hstat-val">$90,000</div><div class="hstat-lbl">Martha · First 90 days</div></div>
         </div>
       </div>
       <div class="hero-right anim d3">
         <div class="hero-result-card">
-          <div class="hrc-tag">Jordan · New Agent</div>
-          <div class="hrc-val">$3,500</div>
-          <div class="hrc-period">in his first 2 days</div>
-          <div class="hrc-note">No prior insurance experience. Followed the system. Wrote his first application on day one.</div>
+          <div class="hrc-tag">Adam · New Agent</div>
+          <div class="hrc-val">$15,300</div>
+          <div class="hrc-period">in his first full month</div>
+          <div class="hrc-note">Transitioned from a capped salary job. Followed the 300-dial framework from day one.</div>
         </div>
         <div class="hero-result-card">
-          <div class="hrc-tag">Fran · New Agent</div>
-          <div class="hrc-val">$5,000</div>
-          <div class="hrc-period">in her first week</div>
-          <div class="hrc-note">Onboarded clean. Got her leads. Dialed with discipline. Closed consistently from the start.</div>
+          <div class="hrc-tag">Martha · New Agent</div>
+          <div class="hrc-val">$90,000</div>
+          <div class="hrc-period">in her first 90 days</div>
+          <div class="hrc-note">Onboarded Monday. In the lead rotation by Wednesday. Issued her first $5K week before Sunday.</div>
         </div>
         <div style="background:var(--bg3);border:1px solid rgba(201,164,106,.1);border-radius:3px;padding:20px 24px;">
-          <div style="font-size:11px;color:var(--text-dim);line-height:1.7">Jordan's pace projected to a full month puts him at over <strong style="color:var(--gold)">$52K/year minimum</strong> — and he was just finding his stride.</div>
+          <div style="font-size:11px;color:var(--text-dim);line-height:1.7">Our active full-time producers average <strong style="color:var(--gold)">$10,000–$15,000 per month.</strong> This is a high-income professional career.</div>
         </div>
       </div>
     </div>
@@ -319,6 +339,7 @@
       <div class="card anim d3"><div style="font-size:26px;margin-bottom:16px">⚡</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">Daily Pay Available</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Fast commission cycles. Producers see money move within days of their first written application. No waiting 30–60 days.</div></div>
       <div class="card anim d1"><div style="font-size:26px;margin-bottom:16px">🏗️</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">10-Year Career Architecture</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Not a gig. A roadmap from personal producer to team leader to override and renewal income. We show you the whole path upfront.</div></div>
       <div class="card anim d2"><div style="font-size:26px;margin-bottom:16px">🤝</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">Full Support Stack</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Carrier contracting, onboarding, training calls, a complete agent playbook, and direct access to leadership. You are never left alone.</div></div>
+      <div class="card anim d3"><div style="font-size:26px;margin-bottom:16px">📈</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">High-Velocity Scale</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Our system isn't designed for "average." We provide the infrastructure to hit $10K+ months within your first 60 days. There is no ceiling on lead flow or income — if you can handle the volume, the leads are there.</div></div>
     </div>
   </div>
 </section>
@@ -329,10 +350,21 @@
     <div class="section-label anim">Agent Results</div>
     <h2 class="display anim d1" style="font-size:clamp(38px,5vw,64px);font-weight:600;line-height:1.1">Real people. Real numbers.</h2>
     <div class="results-grid">
-      <div class="card result-card anim d1"><div class="rc-tag">Jordan · New Agent</div><div class="rc-val">$3,500</div><div class="rc-period">in his first 2 days</div><div class="rc-note">No prior insurance experience. Followed the system. Wrote his first application on day one.</div></div>
-      <div class="card result-card anim d2"><div class="rc-tag">Fran · New Agent</div><div class="rc-val">$5,000</div><div class="rc-period">in her first week</div><div class="rc-note">Onboarded clean. Got her leads. Dialed with discipline. Closed consistently from the start.</div></div>
+      <div class="card result-card anim d1">
+        <div class="rc-tag">Adam · Career Changer</div>
+        <div class="rc-val">$15,300</div>
+        <div class="rc-period">in his first full month</div>
+        <div class="rc-note">Transitioned from a capped salary job. Followed the 300-dial framework from day one. By month three, he cleared $42K in total commissions — enough to take over his mother's mortgage payments.</div>
+      </div>
+      <div class="card result-card anim d2">
+        <div class="rc-tag">Martha · Full-Time Producer</div>
+        <div class="rc-val">$90,000</div>
+        <div class="rc-period">in her first 90 days</div>
+        <div class="rc-note">Committed to the full-time Producer track immediately. Onboarded Monday, in the lead rotation Wednesday, issued her first $5K week before Sunday. Currently pacing for $300K+ in year one.</div>
+      </div>
       <div class="anim d3" style="display:flex;flex-direction:column;justify-content:center;padding:12px">
-        <p style="font-size:16px;color:var(--text-muted);line-height:1.8;margin-bottom:28px">Projected to a full month, Jordan's pace puts him at over <strong style="color:var(--gold)">$52K/year minimum</strong> — and he was still in his first week finding his rhythm.</p>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:14px">Paced for Performance</div>
+        <p style="font-size:16px;color:var(--text-muted);line-height:1.8;margin-bottom:28px">Our active full-time producers average <strong style="color:var(--gold)">$10,000–$15,000 per month.</strong> This isn't a minimum-wage gig — it's a high-income professional career with no ceiling on lead flow or income.</p>
         <p style="font-size:13px;color:var(--text-dim);font-style:italic;line-height:1.75;margin-bottom:28px">"The system is already built. The leads come in. You just have to show up and dial."</p>
         <a class="btn-gold" href="#japply" style="align-self:flex-start">Get on the Team</a>
       </div>
@@ -350,6 +382,36 @@
       <div class="step-col anim d2"><div class="step-num">02</div><div class="step-title">Interview</div><div class="step-desc">A 20-minute call with leadership. We're checking for fit — not just filling seats.</div></div>
       <div class="step-col anim d3"><div class="step-num">03</div><div class="step-title">Get Licensed</div><div class="step-desc">Already licensed? Skip ahead. If not, we walk you through a 14-day fast-track study path.</div></div>
       <div class="step-col anim d4"><div class="step-num">04</div><div class="step-title">Start Producing</div><div class="step-desc">CRM access, lead allocation, your first training calls. You're live and dialing within days.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DAY IN THE LIFE -->
+<section class="jsection-alt">
+  <div class="jinner">
+    <div class="section-label anim">A Serious Producer's Day</div>
+    <h2 class="display anim d1" style="font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.1;max-width:640px">This is what <em style="color:var(--gold);font-style:italic">real production</em> looks like.</h2>
+    <p class="anim d2" style="font-size:16px;color:var(--text-muted);max-width:520px;margin-top:12px;line-height:1.8">No mystery. No vague promises. Here's what a high-output day actually looks like for agents on our system.</p>
+    <div class="daylife-grid">
+      <div class="daylife-block anim d1">
+        <div class="daylife-number">1</div>
+        <div class="daylife-time">8:00 AM</div>
+        <div class="daylife-title">CRM Prep</div>
+        <div class="daylife-desc">Review your lead queue, organize callbacks, and set your daily dial target. The most successful agents treat this like a pre-game warmup — 20 minutes that sets the tone for everything.</div>
+      </div>
+      <div class="daylife-block anim d2">
+        <div class="daylife-number">2</div>
+        <div class="daylife-time">9:00 AM – 1:00 PM</div>
+        <div class="daylife-title">The Dial Session</div>
+        <div class="daylife-desc">300 dials. Proven script. Fresh inbound leads who requested information. This is where your income is made. Top producers don't check their phones. They don't take breaks. They dial.</div>
+      </div>
+      <div class="daylife-block anim d3">
+        <div class="daylife-number">3</div>
+        <div class="daylife-time">2:00 PM – 4:00 PM</div>
+        <div class="daylife-title">Lead Fulfillment & Admin</div>
+        <div class="daylife-desc">Submit applications, follow up on callbacks, and manage your pipeline. At DFG, same-day submissions mean same-week commissions. Clean admin habits are what separate $8K months from $15K months.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -386,6 +448,49 @@
       <div class="phase-card anim d1"><div class="phase-label">Phase I · Years 1–3</div><div class="phase-icon">🏗️</div><div class="phase-title">Build Your Foundation</div><div class="phase-desc">Master the craft. Personal production is your primary income engine. Learn the system, build consistency.</div></div>
       <div class="phase-card anim d2"><div class="phase-label">Phase II · Years 4–6</div><div class="phase-icon">🤝</div><div class="phase-title">Lead &amp; Recruit</div><div class="phase-desc">Override income grows as you develop agents. Your production peaks while the team rises alongside you.</div></div>
       <div class="phase-card anim d3"><div class="phase-label">Phase III · Years 7–10</div><div class="phase-icon">🏆</div><div class="phase-title">Legacy Income</div><div class="phase-desc">Override + renewals surpass personal production. You've built an asset — not just a job.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CARRIER TRUST -->
+<section class="jsection-alt">
+  <div class="jinner">
+    <div class="section-label anim">Carrier Partners</div>
+    <h2 class="display anim d1" style="font-size:clamp(34px,4vw,52px);font-weight:600;line-height:1.1;max-width:600px">You'll be contracted with the <em style="color:var(--gold);font-style:italic">best in the business.</em></h2>
+    <p class="anim d2" style="font-size:15px;color:var(--text-muted);max-width:500px;margin-top:12px;line-height:1.8">Serious agents want stability. Our carrier roster gives you immediate credibility with clients and competitive commission contracts from day one.</p>
+    <div class="carrier-scroll-wrap anim d2">
+      <div class="carrier-scroll">
+        <div class="carrier-pill">Mutual of Omaha</div>
+        <div class="carrier-pill">Aetna / Accendo</div>
+        <div class="carrier-pill">AIG / Corebridge</div>
+        <div class="carrier-pill">Transamerica</div>
+        <div class="carrier-pill">United Home Life</div>
+        <div class="carrier-pill">American Amicable</div>
+        <div class="carrier-pill">North American</div>
+        <div class="carrier-pill">F&amp;G Life</div>
+        <div class="carrier-pill">Foresters Financial</div>
+        <div class="carrier-pill">Americo</div>
+        <div class="carrier-pill">Prosperity Life</div>
+        <div class="carrier-pill">Global Atlantic</div>
+        <div class="carrier-pill">Athene</div>
+        <div class="carrier-pill">Nassau Financial</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="carrier-pill">Mutual of Omaha</div>
+        <div class="carrier-pill">Aetna / Accendo</div>
+        <div class="carrier-pill">AIG / Corebridge</div>
+        <div class="carrier-pill">Transamerica</div>
+        <div class="carrier-pill">United Home Life</div>
+        <div class="carrier-pill">American Amicable</div>
+        <div class="carrier-pill">North American</div>
+        <div class="carrier-pill">F&amp;G Life</div>
+        <div class="carrier-pill">Foresters Financial</div>
+        <div class="carrier-pill">Americo</div>
+        <div class="carrier-pill">Prosperity Life</div>
+        <div class="carrier-pill">Global Atlantic</div>
+        <div class="carrier-pill">Athene</div>
+        <div class="carrier-pill">Nassau Financial</div>
+      </div>
     </div>
   </div>
 </section>
@@ -510,7 +615,7 @@
 <footer id="jfooter">
   <div>
     <div class="jfooter-brand">DUSE FINANCIAL GROUP</div>
-    <div class="jfooter-sub">A division of MPD Investment Group LLC · Powered by Pinnacle Life Agency</div>
+    <div class="jfooter-sub">In partnership with MPD Investment Group LLC and Pinnacle Life Agency. Dedicated to building the next generation of independent agency owners.</div>
   </div>
   <div class="jfooter-legal">© 2025 MPD Investment Group LLC. Income projections are illustrative only and do not guarantee results. Figures represent gross commission estimates before lead costs, chargebacks, or expenses. 500 Stephenson Hwy, Troy, MI 48083</div>
 </footer>
@@ -551,16 +656,16 @@
 
   // INCOME CHART
   var chartData = [
-    { year: 'Y1',  p: 60,  o: 0,   r: 0   },
-    { year: 'Y2',  p: 100, o: 15,  r: 5   },
-    { year: 'Y3',  p: 150, o: 30,  r: 20  },
-    { year: 'Y4',  p: 200, o: 60,  r: 35  },
-    { year: 'Y5',  p: 250, o: 100, r: 65  },
-    { year: 'Y6',  p: 220, o: 150, r: 95  },
-    { year: 'Y7',  p: 150, o: 200, r: 130 },
-    { year: 'Y8',  p: 100, o: 240, r: 150 },
-    { year: 'Y9',  p: 75,  o: 260, r: 165 },
-    { year: 'Y10', p: 50,  o: 275, r: 175 },
+    { year: 'Y1',  p: 80,  o: 0,   r: 0   },
+    { year: 'Y2',  p: 120, o: 0,   r: 0   },
+    { year: 'Y3',  p: 160, o: 0,   r: 0   },
+    { year: 'Y4',  p: 180, o: 45,  r: 0   },
+    { year: 'Y5',  p: 200, o: 90,  r: 25  },
+    { year: 'Y6',  p: 190, o: 140, r: 60  },
+    { year: 'Y7',  p: 140, o: 195, r: 110 },
+    { year: 'Y8',  p: 100, o: 230, r: 155 },
+    { year: 'Y9',  p: 70,  o: 255, r: 185 },
+    { year: 'Y10', p: 50,  o: 270, r: 210 },
   ];
   var chartEl = document.getElementById('jChart');
   chartData.forEach(function (d) {
