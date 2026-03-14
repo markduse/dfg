@@ -119,24 +119,15 @@
     .step-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
     .step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
 
-    /* CHART */
-    .chart-outer { margin-top: 48px; margin-bottom: 24px; }
-    .chart-bars { display: flex; align-items: flex-end; gap: 8px; height: 300px; padding: 0 0 32px 60px; position: relative; }
-    .chart-yaxis { position: absolute; left: 0; top: 0; bottom: 32px; display: flex; flex-direction: column; justify-content: space-between; }
-    .chart-ylabel { font-size: 10px; color: var(--text-dim); }
-    .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
-    .chart-stack { width: 88%; margin: 0 auto; display: flex; flex-direction: column-reverse; border-radius: 3px 3px 0 0; overflow: hidden; transition: height .8s ease; box-shadow: 0 4px 20px rgba(0,0,0,.3); }
-    .chart-stack:hover .chart-tip { opacity: 1; }
-    .bar-p { background: linear-gradient(to top, #2A2A45, #353560); }
-    .bar-o { background: linear-gradient(to top, rgba(201,164,106,.5), rgba(201,164,106,.7)); }
-    .bar-r { background: linear-gradient(to top, #C9A46A, #E8C48A); }
-    .chart-xlabel { font-size: 10px; color: var(--text-dim); margin-top: 7px; }
-    .chart-tip { position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%); background: var(--bg3); border: 1px solid rgba(201,164,106,.25); border-radius: 3px; padding: 10px 14px; min-width: 120px; opacity: 0; pointer-events: none; z-index: 10; transition: opacity .2s; font-size: 12px; }
-    .chart-tip-val { color: var(--gold); font-weight: 600; margin-bottom: 3px; }
-    .chart-tip-lbl { color: var(--text-dim); }
-    .chart-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 44px; }
+    /* LINE CHART */
+    .linechart-wrap { position: relative; margin-top: 48px; background: #0A0A16; border: 1px solid rgba(201,164,106,.1); border-radius: 4px; padding: 24px 16px 8px; }
+    #incomeChart { width: 100%; height: 340px; display: block; }
+    .linechart-tooltip { position: absolute; background: #0C0C1E; border: 1px solid rgba(201,164,106,.3); border-radius: 3px; padding: 12px 16px; font-size: 12px; pointer-events: none; opacity: 0; transition: opacity .15s; z-index: 20; min-width: 150px; }
+    .linechart-tooltip strong { color: var(--gold-light); display: block; margin-bottom: 6px; font-size: 13px; }
+    .linechart-tooltip span { display: block; margin-bottom: 3px; color: var(--text-muted); }
+    .chart-legend { display: flex; gap: 20px; flex-wrap: wrap; }
     .leg-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); }
-    .leg-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+    .leg-dot { width: 10px; height: 10px; flex-shrink: 0; }
 
     /* PHASES */
     .phases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -297,7 +288,7 @@
         </div>
         <div class="hero-stats anim d4">
           <div><div class="hstat-val">$16.8M</div><div class="hstat-lbl">Issued in 2025</div></div>
-          <div><div class="hstat-val">145%</div><div class="hstat-lbl">Max Commission Contract</div></div>
+          <div><div class="hstat-val">Top Contracts</div><div class="hstat-lbl">That Grow With You</div></div>
           <div><div class="hstat-val">100+</div><div class="hstat-lbl">Agents Nationwide</div></div>
           <div><div class="hstat-val">$0</div><div class="hstat-lbl">Cost to Join</div></div>
         </div>
@@ -311,8 +302,8 @@
           <div class="hero-vp-item">
             <div class="hero-vp-icon">💰</div>
             <div>
-              <div class="hero-vp-title">Contracts up to 145%</div>
-              <div class="hero-vp-desc">One of the highest commission rates in the industry. We invest in our agents because your success is our success. Bonuses on top of base comp.</div>
+              <div class="hero-vp-title">Top-Tier Commission Contracts</div>
+              <div class="hero-vp-desc">We offer competitive contracts that grow with your production. Starting rates beat most IMOs, and high performers unlock elite-level comp as they build their book. Bonuses on top.</div>
             </div>
           </div>
           <div class="hero-vp-item">
@@ -466,23 +457,16 @@
       <p class="anim d2" style="font-size:16px;color:var(--text-muted);line-height:1.8;padding-top:4px">This isn't just a sales job — it's a career architecture. Your personal production evolves into override and renewal income that runs without you. We show you the entire trajectory on day one.</p>
     </div>
 
-    <!-- CHART -->
-    <div class="chart-outer anim d2">
-      <div class="chart-bars" id="jChart">
-        <div class="chart-yaxis">
-          <div class="chart-ylabel">$1M</div>
-          <div class="chart-ylabel">$800K</div>
-          <div class="chart-ylabel">$600K</div>
-          <div class="chart-ylabel">$400K</div>
-          <div class="chart-ylabel">$200K</div>
-          <div class="chart-ylabel">$0</div>
-        </div>
-      </div>
+    <!-- LINE CHART -->
+    <div class="linechart-wrap anim d2">
+      <canvas id="incomeChart"></canvas>
+      <div id="chartTooltip" class="linechart-tooltip"></div>
     </div>
-    <div class="chart-legend">
-      <div class="leg-item"><div class="leg-dot" style="background:#1A1A28;border:1px solid rgba(201,164,106,.2)"></div>Personal Production</div>
-      <div class="leg-item"><div class="leg-dot" style="background:rgba(201,164,106,.4)"></div>Override Income</div>
-      <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div>Renewal Income</div>
+    <div class="chart-legend" style="margin-top:20px;margin-bottom:44px">
+      <div class="leg-item"><div class="leg-dot" style="background:#4F6EF7;border-radius:50%"></div>Total Income</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#E8C48A;border-radius:50%"></div>Personal Production</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#C9A46A;border-radius:50%"></div>Override / Recruiting</div>
+      <div class="leg-item"><div class="leg-dot" style="background:#6EE7B7;border-radius:50%"></div>Renewal Income</div>
     </div>
 
     <div class="phases-grid">
@@ -695,50 +679,175 @@
     if (!isOpen) { answer.classList.add('open'); icon.classList.add('open'); }
   };
 
-  // INCOME CHART
-  var chartData = [
-    { year: 'Y1',  p: 80,  o: 0,   r: 0   },
-    { year: 'Y2',  p: 140, o: 0,   r: 0   },
-    { year: 'Y3',  p: 200, o: 0,   r: 0   },
-    { year: 'Y4',  p: 240, o: 60,  r: 0   },
-    { year: 'Y5',  p: 260, o: 120, r: 40  },
-    { year: 'Y6',  p: 240, o: 190, r: 90  },
-    { year: 'Y7',  p: 180, o: 260, r: 160 },
-    { year: 'Y8',  p: 130, o: 310, r: 220 },
-    { year: 'Y9',  p: 90,  o: 340, r: 270 },
-    { year: 'Y10', p: 60,  o: 360, r: 310 },
-  ];
-  var chartEl = document.getElementById('jChart');
-  chartData.forEach(function (d) {
-    var total = d.p + d.o + d.r;
-    var pct = (total / 1000) * 100;
-    var col = document.createElement('div');
-    col.className = 'chart-col';
-    var stack = document.createElement('div');
-    stack.className = 'chart-stack';
-    stack.style.height = Math.max(pct, 2) + '%';
-    ['r','o','p'].forEach(function (k) {
-      if (d[k] <= 0) return;
-      var bar = document.createElement('div');
-      bar.className = k === 'r' ? 'bar-r' : k === 'o' ? 'bar-o' : 'bar-p';
-      bar.style.flex = d[k];
-      bar.style.minHeight = '4px';
-      stack.appendChild(bar);
+  // ── LINE CHART ──
+  (function() {
+    var data = [
+      { yr:'Yr 1',  p:80,  o:0,   r:0   },
+      { yr:'Yr 2',  p:140, o:0,   r:0   },
+      { yr:'Yr 3',  p:200, o:0,   r:0   },
+      { yr:'Yr 4',  p:240, o:60,  r:0   },
+      { yr:'Yr 5',  p:255, o:120, r:40  },
+      { yr:'Yr 6',  p:240, o:195, r:90  },
+      { yr:'Yr 7',  p:185, o:265, r:165 },
+      { yr:'Yr 8',  p:135, o:315, r:225 },
+      { yr:'Yr 9',  p:95,  o:345, r:275 },
+      { yr:'Yr 10', p:65,  o:365, r:315 },
+    ];
+    data.forEach(function(d){ d.total = d.p + d.o + d.r; });
+
+    var canvas = document.getElementById('incomeChart');
+    var tooltip = document.getElementById('chartTooltip');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+
+    var GOLD = '#C9A46A', GOLD_L = '#E8C48A', TEAL = '#6EE7B7', BLUE = '#4F6EF7';
+    var MUTED = 'rgba(255,255,255,0.12)', GRID = 'rgba(255,255,255,0.05)';
+
+    function draw() {
+      var W = canvas.offsetWidth, H = canvas.offsetHeight || 340;
+      canvas.width = W * window.devicePixelRatio;
+      canvas.height = H * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+      var PAD_L = 58, PAD_R = 20, PAD_T = 24, PAD_B = 40;
+      var cW = W - PAD_L - PAD_R, cH = H - PAD_T - PAD_B;
+      var maxVal = 800, yTicks = [0,200,400,600,800];
+      var n = data.length;
+
+      function xPos(i) { return PAD_L + (i / (n-1)) * cW; }
+      function yPos(v) { return PAD_T + cH - (v / maxVal) * cH; }
+
+      // Grid lines & Y labels
+      ctx.font = '10px DM Sans, sans-serif';
+      ctx.textAlign = 'right';
+      yTicks.forEach(function(v) {
+        var y = yPos(v);
+        ctx.strokeStyle = GRID;
+        ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.moveTo(PAD_L, y); ctx.lineTo(W - PAD_R, y); ctx.stroke();
+        ctx.fillStyle = 'rgba(255,255,255,0.3)';
+        ctx.fillText(v === 0 ? '$0' : '$' + v + 'K', PAD_L - 8, y + 4);
+      });
+
+      // Phase background bands
+      var phases = [
+        { from:0, to:2, color:'rgba(79,110,247,0.04)' },
+        { from:3, to:5, color:'rgba(201,164,106,0.04)' },
+        { from:6, to:9, color:'rgba(110,231,183,0.04)' },
+      ];
+      phases.forEach(function(ph) {
+        ctx.fillStyle = ph.color;
+        ctx.fillRect(xPos(ph.from), PAD_T, xPos(ph.to)-xPos(ph.from), cH);
+        // Phase divider
+        if (ph.from > 0) {
+          ctx.strokeStyle = 'rgba(201,164,106,0.15)';
+          ctx.setLineDash([4,4]);
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(xPos(ph.from), PAD_T); ctx.lineTo(xPos(ph.from), PAD_T + cH); ctx.stroke();
+          ctx.setLineDash([]);
+        }
+      });
+
+      // Draw a smooth line
+      function drawLine(series, color, dash, width) {
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width || 2.5;
+        ctx.setLineDash(dash || []);
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+        ctx.beginPath();
+        data.forEach(function(d, i) {
+          var x = xPos(i), y = yPos(d[series]);
+          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+        ctx.setLineDash([]);
+        // Dots
+        data.forEach(function(d, i) {
+          if (d[series] <= 0) return;
+          var x = xPos(i), y = yPos(d[series]);
+          ctx.beginPath();
+          ctx.arc(x, y, 4, 0, Math.PI * 2);
+          ctx.fillStyle = color;
+          ctx.fill();
+          ctx.strokeStyle = '#0A0A16';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        });
+      }
+
+      // Fill under total line
+      ctx.beginPath();
+      data.forEach(function(d, i) {
+        var x = xPos(i), y = yPos(d.total);
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      });
+      ctx.lineTo(xPos(n-1), PAD_T + cH);
+      ctx.lineTo(xPos(0), PAD_T + cH);
+      ctx.closePath();
+      var grad = ctx.createLinearGradient(0, PAD_T, 0, PAD_T + cH);
+      grad.addColorStop(0, 'rgba(79,110,247,0.18)');
+      grad.addColorStop(1, 'rgba(79,110,247,0)');
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Draw lines — order matters (back to front)
+      drawLine('r', TEAL,   [],       2.5);
+      drawLine('o', GOLD,   [],       2.5);
+      drawLine('p', GOLD_L, [6,3],    2);
+      drawLine('total', BLUE, [],     3);
+
+      // X axis labels
+      ctx.fillStyle = 'rgba(255,255,255,0.35)';
+      ctx.textAlign = 'center';
+      ctx.font = '10px DM Sans, sans-serif';
+      data.forEach(function(d, i) {
+        ctx.fillText(d.yr, xPos(i), H - 8);
+      });
+
+      // Phase labels at top
+      var phaseLabels = ['Phase I', 'Phase II', 'Phase III'];
+      var phaseMids = [xPos(1), xPos(4), xPos(8)];
+      ctx.fillStyle = 'rgba(201,164,106,0.45)';
+      ctx.font = '9px DM Sans, sans-serif';
+      ctx.textAlign = 'center';
+      phaseLabels.forEach(function(lbl, i) {
+        ctx.fillText(lbl, phaseMids[i], PAD_T + 12);
+      });
+    }
+
+    // Tooltip on mouse move
+    canvas.addEventListener('mousemove', function(e) {
+      var rect = canvas.getBoundingClientRect();
+      var mx = e.clientX - rect.left;
+      var W = canvas.offsetWidth;
+      var PAD_L = 58, PAD_R = 20, cW = W - PAD_L - PAD_R;
+      var idx = Math.round(((mx - PAD_L) / cW) * (data.length - 1));
+      idx = Math.max(0, Math.min(data.length - 1, idx));
+      var d = data[idx];
+      tooltip.innerHTML = '<strong>' + d.yr + ' · $' + d.total + 'K Total</strong>' +
+        '<span style="color:#E8C48A">Personal: $' + d.p + 'K</span>' +
+        (d.o > 0 ? '<span style="color:#C9A46A">Override: $' + d.o + 'K</span>' : '') +
+        (d.r > 0 ? '<span style="color:#6EE7B7">Renewals: $' + d.r + 'K</span>' : '');
+      tooltip.style.opacity = '1';
+      var tipX = e.clientX - rect.left + 12;
+      var tipY = e.clientY - rect.top - 10;
+      if (tipX + 160 > W) tipX = tipX - 175;
+      tooltip.style.left = tipX + 'px';
+      tooltip.style.top = tipY + 'px';
     });
-    var tip = document.createElement('div');
-    tip.className = 'chart-tip';
-    tip.innerHTML = '<div class="chart-tip-val">$' + total + 'K</div><div class="chart-tip-lbl">' + d.year + ' Total</div>' +
-      (d.p ? '<div class="chart-tip-lbl">Personal: $' + d.p + 'K</div>' : '') +
-      (d.o ? '<div class="chart-tip-lbl">Override: $' + d.o + 'K</div>' : '') +
-      (d.r ? '<div class="chart-tip-lbl">Renewals: $' + d.r + 'K</div>' : '');
-    stack.appendChild(tip);
-    var lbl = document.createElement('div');
-    lbl.className = 'chart-xlabel';
-    lbl.textContent = d.year;
-    col.appendChild(stack);
-    col.appendChild(lbl);
-    chartEl.appendChild(col);
-  });
+    canvas.addEventListener('mouseleave', function() { tooltip.style.opacity = '0'; });
+
+    // Draw on load + resize
+    draw();
+    window.addEventListener('resize', draw);
+
+    // Animate in when visible
+    var chartObs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) { draw(); chartObs.disconnect(); }
+    }, { threshold: 0.3 });
+    chartObs.observe(canvas);
+  })();
 
   // APPLY FORM
   window.submitApply = function () {
