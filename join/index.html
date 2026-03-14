@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join DFG — Build a Six-Figure Remote Career in Insurance</title>
   <meta name="description" content="Duse Financial Group is growing its nationwide agent network. Leads provided. Proven system. 10-year career path. Apply to join." />
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dusefg.netlify.app/join" />
+  <meta property="og:title" content="Join DFG — Build a Six-Figure Remote Career in Insurance" />
+  <meta property="og:description" content="Leads provided. Proven system. $10K–$15K/month average. Martha made $90K in her first 90 days. Apply to join Duse Financial Group." />
+  <meta property="og:image" content="https://dusefg.netlify.app/assets/og-join.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Join DFG — Build a Six-Figure Remote Career" />
+  <meta name="twitter:description" content="$16.8M issued in 2025. Martha: $90K in 90 days. Adam: $15,300 first month. Apply now." />
+  <meta name="twitter:image" content="https://dusefg.netlify.app/assets/og-join.jpg" />
   <!-- Intentionally not indexed -->
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -101,15 +113,15 @@
 
     /* CHART */
     .chart-outer { margin-top: 48px; margin-bottom: 24px; }
-    .chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 220px; padding: 0 0 32px 52px; position: relative; }
+    .chart-bars { display: flex; align-items: flex-end; gap: 8px; height: 300px; padding: 0 0 32px 60px; position: relative; }
     .chart-yaxis { position: absolute; left: 0; top: 0; bottom: 32px; display: flex; flex-direction: column; justify-content: space-between; }
     .chart-ylabel { font-size: 10px; color: var(--text-dim); }
     .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
-    .chart-stack { width: 100%; display: flex; flex-direction: column-reverse; border-radius: 2px 2px 0 0; overflow: hidden; transition: height .8s ease; }
+    .chart-stack { width: 88%; margin: 0 auto; display: flex; flex-direction: column-reverse; border-radius: 3px 3px 0 0; overflow: hidden; transition: height .8s ease; box-shadow: 0 4px 20px rgba(0,0,0,.3); }
     .chart-stack:hover .chart-tip { opacity: 1; }
-    .bar-p { background: #1A1A28; }
-    .bar-o { background: rgba(201,164,106,.4); }
-    .bar-r { background: var(--gold); }
+    .bar-p { background: linear-gradient(to top, #2A2A45, #353560); }
+    .bar-o { background: linear-gradient(to top, rgba(201,164,106,.5), rgba(201,164,106,.7)); }
+    .bar-r { background: linear-gradient(to top, #C9A46A, #E8C48A); }
     .chart-xlabel { font-size: 10px; color: var(--text-dim); margin-top: 7px; }
     .chart-tip { position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%); background: var(--bg3); border: 1px solid rgba(201,164,106,.25); border-radius: 3px; padding: 10px 14px; min-width: 120px; opacity: 0; pointer-events: none; z-index: 10; transition: opacity .2s; font-size: 12px; }
     .chart-tip-val { color: var(--gold); font-weight: 600; margin-bottom: 3px; }
@@ -240,6 +252,7 @@
   <a href="#jproblem" onclick="closeJMobile()">The Reality</a>
   <a href="#jpillars" onclick="closeJMobile()">Why DFG</a>
   <a href="#jresults" onclick="closeJMobile()">Results</a>
+  <a href="#japply" onclick="closeJMobile()">Day in the Life</a>
   <a href="#jhow" onclick="closeJMobile()">How It Works</a>
   <a href="#jpath" onclick="closeJMobile()">Career Path</a>
   <a href="#japply" onclick="closeJMobile()" style="color:var(--gold-light)">Apply Now →</a>
@@ -275,7 +288,7 @@
           <a class="btn-ghost" href="#jhow">See How It Works</a>
         </div>
         <div class="hero-stats anim d4">
-          <div><div class="hstat-val">$1.5M+</div><div class="hstat-lbl">Issued in 2024</div></div>
+          <div><div class="hstat-val">$16.8M</div><div class="hstat-lbl">Issued in 2025</div></div><div><div class="hstat-val">$12.6M</div><div class="hstat-lbl">Issued in 2024</div></div>
           <div><div class="hstat-val">$15,300</div><div class="hstat-lbl">Adam · First full month</div></div>
           <div><div class="hstat-val">$90,000</div><div class="hstat-lbl">Martha · First 90 days</div></div>
         </div>
@@ -429,11 +442,11 @@
     <div class="chart-outer anim d2">
       <div class="chart-bars" id="jChart">
         <div class="chart-yaxis">
-          <div class="chart-ylabel">$500K</div>
+          <div class="chart-ylabel">$1M</div>
+          <div class="chart-ylabel">$800K</div>
+          <div class="chart-ylabel">$600K</div>
           <div class="chart-ylabel">$400K</div>
-          <div class="chart-ylabel">$300K</div>
           <div class="chart-ylabel">$200K</div>
-          <div class="chart-ylabel">$100K</div>
           <div class="chart-ylabel">$0</div>
         </div>
       </div>
@@ -657,20 +670,20 @@
   // INCOME CHART
   var chartData = [
     { year: 'Y1',  p: 80,  o: 0,   r: 0   },
-    { year: 'Y2',  p: 120, o: 0,   r: 0   },
-    { year: 'Y3',  p: 160, o: 0,   r: 0   },
-    { year: 'Y4',  p: 180, o: 45,  r: 0   },
-    { year: 'Y5',  p: 200, o: 90,  r: 25  },
-    { year: 'Y6',  p: 190, o: 140, r: 60  },
-    { year: 'Y7',  p: 140, o: 195, r: 110 },
-    { year: 'Y8',  p: 100, o: 230, r: 155 },
-    { year: 'Y9',  p: 70,  o: 255, r: 185 },
-    { year: 'Y10', p: 50,  o: 270, r: 210 },
+    { year: 'Y2',  p: 140, o: 0,   r: 0   },
+    { year: 'Y3',  p: 200, o: 0,   r: 0   },
+    { year: 'Y4',  p: 240, o: 60,  r: 0   },
+    { year: 'Y5',  p: 260, o: 120, r: 40  },
+    { year: 'Y6',  p: 240, o: 190, r: 90  },
+    { year: 'Y7',  p: 180, o: 260, r: 160 },
+    { year: 'Y8',  p: 130, o: 310, r: 220 },
+    { year: 'Y9',  p: 90,  o: 340, r: 270 },
+    { year: 'Y10', p: 60,  o: 360, r: 310 },
   ];
   var chartEl = document.getElementById('jChart');
   chartData.forEach(function (d) {
     var total = d.p + d.o + d.r;
-    var pct = (total / 500) * 100;
+    var pct = (total / 1000) * 100;
     var col = document.createElement('div');
     col.className = 'chart-col';
     var stack = document.createElement('div');
