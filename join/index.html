@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join DFG — Build a Six-Figure Remote Career in Insurance</title>
+  <meta name="description" content="Duse Financial Group is growing its nationwide agent network. Leads provided. Proven system. 10-year career path. Apply to join." />
+  <!-- Intentionally not indexed -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: #07070E; color: #EDE9DF; overflow-x: hidden; }
+    :root {
+      --bg: #07070E; --bg2: #090912; --bg3: #0C0C18;
+      --navy: #1B2558; --gold: #C9A46A; --gold-light: #E8C48A;
+      --gold-dim: rgba(201,164,106,0.12); --text-muted: #7A7A8E;
+      --text-dim: #5A5A6A; --white: #EDE9DF;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+    .display { font-family: 'Cormorant Garamond', serif; }
+    .section-label { font-size: 10px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-label::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
+
+    .btn-gold { display: inline-block; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #07070E; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 16px 40px; border-radius: 2px; border: none; cursor: pointer; transition: all .25s ease; box-shadow: 0 8px 28px rgba(201,164,106,.22); text-decoration: none; }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(201,164,106,.38); }
+    .btn-ghost { display: inline-block; background: transparent; color: var(--gold); border: 1px solid rgba(201,164,106,.35); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; padding: 15px 40px; border-radius: 2px; cursor: pointer; transition: all .25s ease; text-decoration: none; }
+    .btn-ghost:hover { border-color: var(--gold); background: rgba(201,164,106,.06); }
+
+    .card { background: var(--bg3); border: 1px solid rgba(201,164,106,.1); border-radius: 3px; padding: 32px 28px; transition: all .3s ease; }
+    .card:hover { border-color: rgba(201,164,106,.3); transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,.45); }
+
+    /* NAV */
+    #jnav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; transition: all .4s; }
+    #jnav.scrolled { background: rgba(7,7,14,.96); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,164,106,.1); }
+    .jnav-logo { display: flex; align-items: center; gap: 12px; }
+    .jnav-logo img { width: 40px; height: 40px; border-radius: 50%; }
+    .jnav-brand { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; letter-spacing: .04em; }
+    .jnav-sub { font-size: 9px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-top: 2px; }
+    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .mobile-menu-btn span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: all .3s; }
+    .jmobile { display: none; position: fixed; inset: 0; background: #07070E; z-index: 1000; flex-direction: column; justify-content: center; align-items: center; gap: 28px; }
+    .jmobile.open { display: flex; }
+    .jmobile a { font-family: 'Cormorant Garamond', serif; font-size: 34px; color: var(--white); font-weight: 600; text-decoration: none; }
+    .jmobile-close { position: absolute; top: 24px; right: 28px; font-size: 26px; color: var(--gold); cursor: pointer; background: none; border: none; }
+
+    /* SECTIONS */
+    .jsection { padding: 100px 60px; }
+    .jsection-alt { padding: 100px 60px; background: var(--bg2); border-top: 1px solid rgba(201,164,106,.07); }
+    .jinner { max-width: 1100px; margin: 0 auto; }
+
+    /* HERO */
+    #jhero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 60px 100px; position: relative; overflow: hidden; }
+    .jhero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    .jhero-glow { position: absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(201,164,106,.07) 0%, transparent 70%); right: -100px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    .jhero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+    .hero-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(58px, 7vw, 98px); font-weight: 700; line-height: .96; margin-bottom: 32px; }
+    .hero-h1 em { color: var(--gold); font-style: italic; }
+    .hero-p { font-size: 17px; line-height: 1.8; color: var(--text-muted); max-width: 520px; margin-bottom: 44px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-stats { display: flex; gap: 44px; padding-top: 40px; border-top: 1px solid rgba(201,164,106,.15); flex-wrap: wrap; }
+    .hstat-val { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .hstat-lbl { font-size: 11px; color: var(--text-dim); letter-spacing: .06em; margin-top: 5px; }
+    .hero-right { display: flex; flex-direction: column; gap: 16px; }
+    .hero-result-card { background: var(--bg3); border: 1px solid rgba(201,164,106,.15); border-radius: 3px; padding: 24px 28px; }
+    .hrc-tag { font-size: 10px; letter-spacing: .18em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .hrc-val { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .hrc-period { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+    .hrc-note { font-size: 12px; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
+    .dot-grid { position: absolute; inset: 0; opacity: .03; background-image: radial-gradient(circle at 1px 1px, var(--gold) 1px, transparent 0); background-size: 36px 36px; pointer-events: none; }
+
+    /* PROBLEM */
+    .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 48px; }
+    .prob-item { border-left: 2px solid rgba(201,164,106,.2); padding-left: 22px; }
+    .prob-t { font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+    .prob-d { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
+
+    /* PILLARS */
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 48px; }
+
+    /* RESULTS */
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 48px; }
+    .result-card { text-align: center; padding: 44px 28px; }
+    .rc-tag { font-size: 10px; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+    .rc-val { font-family: 'Cormorant Garamond', serif; font-size: 68px; font-weight: 700; color: var(--gold); line-height: 1; }
+    .rc-period { font-size: 14px; color: var(--text-muted); margin-top: 10px; }
+    .rc-note { font-size: 13px; color: var(--text-dim); margin-top: 12px; line-height: 1.7; }
+
+    /* STEPS */
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(201,164,106,.12); margin-top: 52px; }
+    .step-col { padding: 36px 28px 36px 0; }
+    .step-col:not(:last-child) { border-right: 1px solid rgba(201,164,106,.1); }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: rgba(201,164,106,.2); line-height: 1; margin-bottom: 20px; }
+    .step-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
+    .step-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
+
+    /* CHART */
+    .chart-outer { margin-top: 48px; margin-bottom: 24px; }
+    .chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 220px; padding: 0 0 32px 52px; position: relative; }
+    .chart-yaxis { position: absolute; left: 0; top: 0; bottom: 32px; display: flex; flex-direction: column; justify-content: space-between; }
+    .chart-ylabel { font-size: 10px; color: var(--text-dim); }
+    .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
+    .chart-stack { width: 100%; display: flex; flex-direction: column-reverse; border-radius: 2px 2px 0 0; overflow: hidden; transition: height .8s ease; }
+    .chart-stack:hover .chart-tip { opacity: 1; }
+    .bar-p { background: #1A1A28; }
+    .bar-o { background: rgba(201,164,106,.4); }
+    .bar-r { background: var(--gold); }
+    .chart-xlabel { font-size: 10px; color: var(--text-dim); margin-top: 7px; }
+    .chart-tip { position: absolute; bottom: 105%; left: 50%; transform: translateX(-50%); background: var(--bg3); border: 1px solid rgba(201,164,106,.25); border-radius: 3px; padding: 10px 14px; min-width: 120px; opacity: 0; pointer-events: none; z-index: 10; transition: opacity .2s; font-size: 12px; }
+    .chart-tip-val { color: var(--gold); font-weight: 600; margin-bottom: 3px; }
+    .chart-tip-lbl { color: var(--text-dim); }
+    .chart-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 44px; }
+    .leg-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-dim); }
+    .leg-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
+
+    /* PHASES */
+    .phases-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .phase-card { background: var(--bg3); border: 1px solid rgba(201,164,106,.1); border-radius: 3px; padding: 24px; }
+    .phase-label { font-size: 10px; color: var(--gold); letter-spacing: .18em; text-transform: uppercase; margin-bottom: 10px; }
+    .phase-icon { font-size: 22px; margin-bottom: 10px; }
+    .phase-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--white); }
+    .phase-desc { font-size: 13px; color: var(--text-dim); line-height: 1.7; }
+
+    /* WHO */
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .trait-row { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .trait-check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; font-size: 9px; color: var(--gold); }
+    .trait-text { font-size: 15px; color: rgba(237,233,223,.75); line-height: 1.6; }
+
+    /* FAQ */
+    .jfaq-inner { max-width: 780px; margin: 48px auto 0; }
+    .faq-item { border-bottom: 1px solid rgba(201,164,106,.12); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; gap: 20px; }
+    .faq-qt { font-size: 16px; font-weight: 500; color: var(--white); transition: color .2s; }
+    .faq-q:hover .faq-qt { color: var(--gold); }
+    .faq-icon { font-size: 22px; color: var(--gold); flex-shrink: 0; transition: transform .25s; }
+    .faq-icon.open { transform: rotate(45deg); }
+    .faq-a { font-size: 15px; color: var(--text-muted); line-height: 1.85; padding-bottom: 24px; display: none; }
+    .faq-a.open { display: block; }
+
+    /* APPLY FORM */
+    .apply-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; }
+    .apply-info h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px,4vw,60px); font-weight: 600; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+    .apply-info h2 em { color: var(--gold-light); font-style: italic; }
+    .apply-info p { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 32px; }
+    .apply-checklist { display: flex; flex-direction: column; gap: 12px; }
+    .apply-check { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(237,233,223,.7); }
+    .apply-check::before { content: '✓'; width: 22px; height: 22px; background: var(--gold-dim); border: 1px solid rgba(201,164,106,.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--gold); flex-shrink: 0; }
+    .apply-form { background: #0C0C1A; border: 1px solid rgba(201,164,106,.15); border-radius: 4px; padding: 44px 40px; }
+    .aform-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+    .aform-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(237,233,223,.5); margin-bottom: 7px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 16px; border: 1px solid rgba(201,164,106,.15); border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--white); background: rgba(255,255,255,.04); transition: border-color .2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+    .form-group select option { background: #0C0C18; }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-privacy { font-size: 11px; color: var(--text-dim); line-height: 1.6; margin-top: 14px; }
+    .apply-success { display: none; text-align: center; padding: 48px 20px; }
+    .apply-success .si { font-size: 48px; margin-bottom: 16px; }
+    .apply-success h3 { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--white); margin-bottom: 10px; }
+    .apply-success p { font-size: 15px; color: var(--text-muted); }
+
+    /* CTA SECTION */
+    #jcta { padding: 140px 60px; text-align: center; position: relative; overflow: hidden; }
+    .jcta-glow { position: absolute; width: 700px; height: 700px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(201,164,106,.06) 0%, transparent 70%); pointer-events: none; }
+    .jcta-inner { max-width: 640px; margin: 0 auto; position: relative; }
+
+    /* FOOTER */
+    #jfooter { padding: 36px 60px; border-top: 1px solid rgba(201,164,106,.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .jfooter-brand { font-family: 'Cormorant Garamond', serif; font-size: 15px; letter-spacing: .04em; }
+    .jfooter-sub { font-size: 10px; color: rgba(201,164,106,.5); margin-top: 3px; letter-spacing: .1em; }
+    .jfooter-legal { font-size: 11px; color: #2A2A3A; max-width: 460px; text-align: right; line-height: 1.6; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+    .anim { opacity: 0; }
+    .anim.in { animation: fadeUp .85s cubic-bezier(.22,.68,0,1.2) both; }
+    .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; }
+    .d3 { animation-delay: .25s; } .d4 { animation-delay: .35s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      #jnav { padding: 16px 24px; }
+      #jnav .btn-gold { display: none; }
+      .mobile-menu-btn { display: flex; }
+      #jhero { padding: 120px 24px 80px; }
+      .jhero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-right { display: none; }
+      .jsection, .jsection-alt { padding: 72px 24px; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .step-col:nth-child(2) { border-right: none; }
+      .step-col:nth-child(odd):not(:last-child) { border-right: 1px solid rgba(201,164,106,.1); }
+      .phases-grid { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; gap: 40px; }
+      .apply-grid { grid-template-columns: 1fr; gap: 40px; }
+      .form-row { grid-template-columns: 1fr; }
+      #jcta { padding: 80px 24px; }
+      #jfooter { padding: 28px 24px; flex-direction: column; text-align: center; }
+      .jfooter-legal { text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-col:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(201,164,106,.1); }
+      .apply-form { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="jmobile" id="jMobileMenu">
+  <button class="jmobile-close" onclick="closeJMobile()">✕</button>
+  <a href="#jproblem" onclick="closeJMobile()">The Reality</a>
+  <a href="#jpillars" onclick="closeJMobile()">Why DFG</a>
+  <a href="#jresults" onclick="closeJMobile()">Results</a>
+  <a href="#jhow" onclick="closeJMobile()">How It Works</a>
+  <a href="#jpath" onclick="closeJMobile()">Career Path</a>
+  <a href="#japply" onclick="closeJMobile()" style="color:var(--gold-light)">Apply Now →</a>
+</div>
+
+<!-- NAV -->
+<nav id="jnav">
+  <div class="jnav-logo">
+    <img src="../assets/dfg-logo.png" alt="Duse Financial Group" />
+    <div>
+      <div class="jnav-brand">Duse Financial Group</div>
+      <div class="jnav-sub">Agent Opportunities</div>
+    </div>
+  </div>
+  <a class="btn-gold" href="#japply">Apply Now</a>
+  <div class="mobile-menu-btn" onclick="openJMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="jhero">
+  <div class="dot-grid"></div>
+  <div class="jhero-glow"></div>
+  <div class="jhero-inner">
+    <div class="jhero-grid">
+      <div>
+        <div class="section-label anim d1">Agent Opportunity · 100% Remote · Commission</div>
+        <h1 class="hero-h1 anim d2">Built for<br><em>serious</em><br>producers.</h1>
+        <p class="hero-p anim d3">We built the system. We generate the leads. We wrote the playbook. All you bring is work ethic — and we'll show you exactly how to turn it into $10K+ months from anywhere.</p>
+        <div class="hero-btns anim d4">
+          <a class="btn-gold" href="#japply">Apply for the Team</a>
+          <a class="btn-ghost" href="#jhow">See How It Works</a>
+        </div>
+        <div class="hero-stats anim d4">
+          <div><div class="hstat-val">$1.5M+</div><div class="hstat-lbl">Issued in 2024</div></div>
+          <div><div class="hstat-val">$3,500</div><div class="hstat-lbl">Jordan · First 2 days</div></div>
+          <div><div class="hstat-val">$5,000</div><div class="hstat-lbl">Fran · First week</div></div>
+        </div>
+      </div>
+      <div class="hero-right anim d3">
+        <div class="hero-result-card">
+          <div class="hrc-tag">Jordan · New Agent</div>
+          <div class="hrc-val">$3,500</div>
+          <div class="hrc-period">in his first 2 days</div>
+          <div class="hrc-note">No prior insurance experience. Followed the system. Wrote his first application on day one.</div>
+        </div>
+        <div class="hero-result-card">
+          <div class="hrc-tag">Fran · New Agent</div>
+          <div class="hrc-val">$5,000</div>
+          <div class="hrc-period">in her first week</div>
+          <div class="hrc-note">Onboarded clean. Got her leads. Dialed with discipline. Closed consistently from the start.</div>
+        </div>
+        <div style="background:var(--bg3);border:1px solid rgba(201,164,106,.1);border-radius:3px;padding:20px 24px;">
+          <div style="font-size:11px;color:var(--text-dim);line-height:1.7">Jordan's pace projected to a full month puts him at over <strong style="color:var(--gold)">$52K/year minimum</strong> — and he was just finding his stride.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="jsection-alt" id="jproblem">
+  <div class="jinner">
+    <div class="section-label anim">The Reality</div>
+    <h2 class="display anim d1" style="font-size:clamp(38px,5vw,64px);font-weight:600;max-width:700px;line-height:1.1">Most insurance opportunities are built to fail you.</h2>
+    <div class="problem-grid">
+      <div class="prob-item anim d1">
+        <div class="prob-t">You buy your own cold leads</div>
+        <div class="prob-d">Agencies charge $25–$50/lead for recycled lists. You start in debt before you make a dollar.</div>
+      </div>
+      <div class="prob-item anim d2">
+        <div class="prob-t">No real training exists</div>
+        <div class="prob-d">A 2-hour Zoom and a carrier contract. Then: "good luck." You're alone trying to sell a complex product.</div>
+      </div>
+      <div class="prob-item anim d3">
+        <div class="prob-t">Chargebacks destroy your pay</div>
+        <div class="prob-d">One cancelled policy and your commission reverses. Nobody explains how to minimize this until it's too late.</div>
+      </div>
+      <div class="prob-item anim d4">
+        <div class="prob-t">There's no path beyond producer</div>
+        <div class="prob-d">You max out personal production and hit a ceiling. No override. No residuals. No exit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="jsection" id="jpillars">
+  <div class="jinner">
+    <div class="section-label anim">Why DFG</div>
+    <h2 class="display anim d1" style="font-size:clamp(38px,5vw,64px);font-weight:600;max-width:660px;line-height:1.1;margin-bottom:12px">We built it differently.</h2>
+    <p class="anim d2" style="font-size:17px;color:var(--text-muted);max-width:520px;line-height:1.75">Everything we've built is designed to remove the obstacles between you and a high income.</p>
+    <div class="pillars-grid">
+      <div class="card anim d1"><div style="font-size:26px;margin-bottom:16px">📋</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">Leads Provided</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">We run our own lead generation through Pinnacle Lead Shop. No cold calling, no door knocking. You dial people who raised their hand and asked for help.</div></div>
+      <div class="card anim d2"><div style="font-size:26px;margin-bottom:16px">📞</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">Proven Dialing System</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">A refined script, a 300-dial framework, and a CRM built for telesales. You follow the system — the system works.</div></div>
+      <div class="card anim d3"><div style="font-size:26px;margin-bottom:16px">⚡</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">Daily Pay Available</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Fast commission cycles. Producers see money move within days of their first written application. No waiting 30–60 days.</div></div>
+      <div class="card anim d1"><div style="font-size:26px;margin-bottom:16px">🏗️</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">10-Year Career Architecture</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Not a gig. A roadmap from personal producer to team leader to override and renewal income. We show you the whole path upfront.</div></div>
+      <div class="card anim d2"><div style="font-size:26px;margin-bottom:16px">🤝</div><div style="font-size:15px;font-weight:600;margin-bottom:10px;color:var(--white)">Full Support Stack</div><div style="font-size:14px;color:var(--text-muted);line-height:1.75">Carrier contracting, onboarding, training calls, a complete agent playbook, and direct access to leadership. You are never left alone.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="jsection-alt" id="jresults">
+  <div class="jinner">
+    <div class="section-label anim">Agent Results</div>
+    <h2 class="display anim d1" style="font-size:clamp(38px,5vw,64px);font-weight:600;line-height:1.1">Real people. Real numbers.</h2>
+    <div class="results-grid">
+      <div class="card result-card anim d1"><div class="rc-tag">Jordan · New Agent</div><div class="rc-val">$3,500</div><div class="rc-period">in his first 2 days</div><div class="rc-note">No prior insurance experience. Followed the system. Wrote his first application on day one.</div></div>
+      <div class="card result-card anim d2"><div class="rc-tag">Fran · New Agent</div><div class="rc-val">$5,000</div><div class="rc-period">in her first week</div><div class="rc-note">Onboarded clean. Got her leads. Dialed with discipline. Closed consistently from the start.</div></div>
+      <div class="anim d3" style="display:flex;flex-direction:column;justify-content:center;padding:12px">
+        <p style="font-size:16px;color:var(--text-muted);line-height:1.8;margin-bottom:28px">Projected to a full month, Jordan's pace puts him at over <strong style="color:var(--gold)">$52K/year minimum</strong> — and he was still in his first week finding his rhythm.</p>
+        <p style="font-size:13px;color:var(--text-dim);font-style:italic;line-height:1.75;margin-bottom:28px">"The system is already built. The leads come in. You just have to show up and dial."</p>
+        <a class="btn-gold" href="#japply" style="align-self:flex-start">Get on the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="jsection" id="jhow">
+  <div class="jinner">
+    <div class="section-label anim">The Process</div>
+    <h2 class="display anim d1" style="font-size:clamp(38px,5vw,64px);font-weight:600;line-height:1.1">From zero to producing in 14 days.</h2>
+    <div class="steps-grid">
+      <div class="step-col anim d1"><div class="step-num">01</div><div class="step-title">Apply</div><div class="step-desc">Short application. We review within 24 hours and reach out directly to schedule your interview.</div></div>
+      <div class="step-col anim d2"><div class="step-num">02</div><div class="step-title">Interview</div><div class="step-desc">A 20-minute call with leadership. We're checking for fit — not just filling seats.</div></div>
+      <div class="step-col anim d3"><div class="step-num">03</div><div class="step-title">Get Licensed</div><div class="step-desc">Already licensed? Skip ahead. If not, we walk you through a 14-day fast-track study path.</div></div>
+      <div class="step-col anim d4"><div class="step-num">04</div><div class="step-title">Start Producing</div><div class="step-desc">CRM access, lead allocation, your first training calls. You're live and dialing within days.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- INCOME PATH -->
+<section class="jsection-alt" id="jpath">
+  <div class="jinner">
+    <div class="section-label anim">The 10-Year Path</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-bottom:44px">
+      <h2 class="display anim d1" style="font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.1">Producer today.<br><em style="color:var(--gold);font-style:italic">Leader tomorrow.</em></h2>
+      <p class="anim d2" style="font-size:16px;color:var(--text-muted);line-height:1.8;padding-top:4px">This isn't just a sales job — it's a career architecture. Your personal production evolves into override and renewal income that runs without you. We show you the entire trajectory on day one.</p>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-outer anim d2">
+      <div class="chart-bars" id="jChart">
+        <div class="chart-yaxis">
+          <div class="chart-ylabel">$500K</div>
+          <div class="chart-ylabel">$400K</div>
+          <div class="chart-ylabel">$300K</div>
+          <div class="chart-ylabel">$200K</div>
+          <div class="chart-ylabel">$100K</div>
+          <div class="chart-ylabel">$0</div>
+        </div>
+      </div>
+    </div>
+    <div class="chart-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:#1A1A28;border:1px solid rgba(201,164,106,.2)"></div>Personal Production</div>
+      <div class="leg-item"><div class="leg-dot" style="background:rgba(201,164,106,.4)"></div>Override Income</div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div>Renewal Income</div>
+    </div>
+
+    <div class="phases-grid">
+      <div class="phase-card anim d1"><div class="phase-label">Phase I · Years 1–3</div><div class="phase-icon">🏗️</div><div class="phase-title">Build Your Foundation</div><div class="phase-desc">Master the craft. Personal production is your primary income engine. Learn the system, build consistency.</div></div>
+      <div class="phase-card anim d2"><div class="phase-label">Phase II · Years 4–6</div><div class="phase-icon">🤝</div><div class="phase-title">Lead &amp; Recruit</div><div class="phase-desc">Override income grows as you develop agents. Your production peaks while the team rises alongside you.</div></div>
+      <div class="phase-card anim d3"><div class="phase-label">Phase III · Years 7–10</div><div class="phase-icon">🏆</div><div class="phase-title">Legacy Income</div><div class="phase-desc">Override + renewals surpass personal production. You've built an asset — not just a job.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE WANT -->
+<section class="jsection">
+  <div class="jinner">
+    <div class="who-grid">
+      <div>
+        <div class="section-label anim">Fit Check</div>
+        <h2 class="display anim d1" style="font-size:clamp(38px,5vw,60px);font-weight:600;line-height:1.1;margin-bottom:22px">This isn't for everyone.</h2>
+        <p class="anim d2" style="font-size:16px;color:var(--text-muted);line-height:1.8;margin-bottom:18px">We're selective because we invest heavily in every agent we bring on. Carrier contracting, CRM setup, onboarding calls, lead allocation — none of that is cheap.</p>
+        <p class="anim d3" style="font-size:16px;color:var(--text-muted);line-height:1.8">If you're looking for a salaried gig with guaranteed pay and minimal effort, this isn't your place. If you want to build something real on a proven system — keep reading.</p>
+      </div>
+      <div class="anim d2">
+        <div style="font-size:10px;font-weight:600;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px">You're a fit if you are:</div>
+        <div class="trait-row"><div class="trait-check">✓</div><div class="trait-text">Self-motivated — you don't need someone standing over your shoulder</div></div>
+        <div class="trait-row"><div class="trait-check">✓</div><div class="trait-text">Coachable — you follow systems before trying to reinvent them</div></div>
+        <div class="trait-row"><div class="trait-check">✓</div><div class="trait-text">Hungry — $5K months feel like a floor, not a ceiling</div></div>
+        <div class="trait-row"><div class="trait-check">✓</div><div class="trait-text">People-oriented — you're naturally good in conversation</div></div>
+        <div class="trait-row"><div class="trait-check">✓</div><div class="trait-text">Reliable — when you commit to something, you show up</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="jsection-alt">
+  <div class="jinner">
+    <div class="jfaq-inner">
+      <div class="section-label anim">Questions</div>
+      <h2 class="display anim d1" style="font-size:clamp(36px,5vw,56px);font-weight:600;line-height:1.1">Common questions.</h2>
+      <div class="faq-item"><div class="faq-q" onclick="jToggleFaq(this)"><span class="faq-qt">Do I need a license to start?</span><span class="faq-icon">+</span></div><div class="faq-a">This is a licensed financial services industry. If you're already licensed — great, let's talk. If not, we have a structured 14-day study program that gets you licensed and dialing fast.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="jToggleFaq(this)"><span class="faq-qt">Is this commission-only?</span><span class="faq-icon">+</span></div><div class="faq-a">Yes. We're building partners, not employees. The average W2 job pays $45K/year. Our producers target $10K+/month. We give you the full system — you provide the work ethic and we split the upside.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="jToggleFaq(this)"><span class="faq-qt">How do the leads work?</span><span class="faq-icon">+</span></div><div class="faq-a">We own our own lead generation operation — Pinnacle Lead Shop. Every lead comes from a real person who went online, saw our ads, and requested life insurance information. You're speaking to interested buyers, not cold-calling strangers.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="jToggleFaq(this)"><span class="faq-qt">What does a typical day look like?</span><span class="faq-icon">+</span></div><div class="faq-a">Log in, load your CRM, dial your leads using our proven script, run quotes in real time, submit applications. Top agents work 5–6 focused hours and generate more than most people do in a full 40-hour week.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="jToggleFaq(this)"><span class="faq-qt">Can I do this part-time?</span><span class="faq-icon">+</span></div><div class="faq-a">We strongly prefer full-time commitment while you're building momentum. We do accept serious part-time agents who can commit 20+ hours per week, but results reflect the hours you put in.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="jToggleFaq(this)"><span class="faq-qt">What makes DFG different from other IMOs?</span><span class="faq-icon">+</span></div><div class="faq-a">Most agencies give you a contract and wish you luck. We built the lead shop, wrote the playbook, mapped out the 10-year income path, and we're on the phone with agents daily. The infrastructure we run would cost you $50K+ to replicate on your own.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section class="jsection-alt" id="japply">
+  <div class="jinner">
+    <div class="apply-grid">
+      <div class="apply-info">
+        <div class="section-label anim">Apply Now</div>
+        <h2 class="anim d1">Ready to <em>build something real?</em></h2>
+        <p class="anim d2">Fill out the form and a member of our leadership team will reach out within one business day to schedule your interview call.</p>
+        <div class="apply-checklist anim d3">
+          <div class="apply-check">No experience required</div>
+          <div class="apply-check">License support available</div>
+          <div class="apply-check">Same-week onboarding possible</div>
+          <div class="apply-check">Carrier contracting support</div>
+          <div class="apply-check">CRM access included</div>
+          <div class="apply-check">Direct mentorship from producers</div>
+        </div>
+      </div>
+      <div class="anim d2">
+        <div class="apply-form" id="applyFormWrap">
+          <div class="aform-title">Agent Application</div>
+          <div class="aform-sub">Takes 2 minutes. We'll follow up within 24 hours.</div>
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" id="af-first" placeholder="First name" /></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="af-last" placeholder="Last name" /></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" id="af-email" placeholder="your@email.com" /></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" id="af-phone" placeholder="(555) 000-0000" /></div>
+          <div class="form-group"><label>State</label>
+            <select id="af-state">
+              <option value="">Select your state</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Currently Licensed?</label>
+            <select id="af-licensed">
+              <option value="">Select one</option>
+              <option>Yes — I hold an active life insurance license</option>
+              <option>No — I need to get licensed</option>
+              <option>In progress — currently studying</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Monthly Income Goal</label>
+            <select id="af-goal">
+              <option value="">Select a range</option>
+              <option>$3,000 – $5,000/month</option>
+              <option>$5,000 – $10,000/month</option>
+              <option>$10,000 – $15,000/month</option>
+              <option>$15,000+/month</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Tell us about yourself (optional)</label><textarea id="af-message" placeholder="Current situation, why you're interested, any relevant background…"></textarea></div>
+          <button class="btn-gold" style="width:100%;padding:17px;font-size:13px" onclick="submitApply()">Submit Application →</button>
+          <div class="form-privacy">🔒 Your information is private. You'll receive a follow-up within one business day from a member of our team.</div>
+        </div>
+        <div class="apply-success" id="applySuccess">
+          <div class="si">✅</div>
+          <h3>Application Received!</h3>
+          <p>A member of our leadership team will reach out to you within one business day to schedule your interview.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="jcta">
+  <div class="jcta-glow"></div>
+  <div class="jcta-inner">
+    <div class="section-label anim" style="justify-content:center">One Conversation Away</div>
+    <h2 class="display anim d1" style="font-size:clamp(52px,8vw,88px);font-weight:700;line-height:.95;margin-bottom:24px">The system<br><em style="color:var(--gold);font-style:italic">is ready.</em></h2>
+    <p class="anim d2" style="font-size:17px;color:var(--text-muted);max-width:420px;margin:0 auto 44px;line-height:1.75">The leads are running. The playbook is written. The agents in our network are closing deals today. Are you next?</p>
+    <div class="anim d3">
+      <a class="btn-gold" href="#japply" style="font-size:13px;padding:20px 52px">Apply for the Team</a>
+      <div style="margin-top:18px;font-size:12px;color:#2A2A3A;letter-spacing:.06em">Limited spots per month. We keep the operation tight on purpose.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="jfooter">
+  <div>
+    <div class="jfooter-brand">DUSE FINANCIAL GROUP</div>
+    <div class="jfooter-sub">A division of MPD Investment Group LLC · Powered by Pinnacle Life Agency</div>
+  </div>
+  <div class="jfooter-legal">© 2025 MPD Investment Group LLC. Income projections are illustrative only and do not guarantee results. Figures represent gross commission estimates before lead costs, chargebacks, or expenses. 345 Kirts Blvd, Troy MI 48084</div>
+</footer>
+
+<script>
+(function () {
+  var SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+  // NAV SCROLL
+  var nav = document.getElementById('jnav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // HERO IMMEDIATE
+  document.querySelectorAll('#jhero .anim').forEach(function (el) { el.classList.add('in'); });
+
+  // SCROLL ANIMATIONS
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.anim:not(.in)').forEach(function (el) { io.observe(el); });
+
+  // MOBILE MENU
+  window.openJMobile = function () { document.getElementById('jMobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; };
+  window.closeJMobile = function () { document.getElementById('jMobileMenu').classList.remove('open'); document.body.style.overflow = ''; };
+
+  // FAQ
+  window.jToggleFaq = function (btn) {
+    var icon = btn.querySelector('.faq-icon');
+    var answer = btn.nextElementSibling;
+    var isOpen = answer.classList.contains('open');
+    document.querySelectorAll('.faq-a').forEach(function (a) { a.classList.remove('open'); });
+    document.querySelectorAll('.faq-icon').forEach(function (i) { i.classList.remove('open'); });
+    if (!isOpen) { answer.classList.add('open'); icon.classList.add('open'); }
+  };
+
+  // INCOME CHART
+  var chartData = [
+    { year: 'Y1',  p: 60,  o: 0,   r: 0   },
+    { year: 'Y2',  p: 100, o: 15,  r: 5   },
+    { year: 'Y3',  p: 150, o: 30,  r: 20  },
+    { year: 'Y4',  p: 200, o: 60,  r: 35  },
+    { year: 'Y5',  p: 250, o: 100, r: 65  },
+    { year: 'Y6',  p: 220, o: 150, r: 95  },
+    { year: 'Y7',  p: 150, o: 200, r: 130 },
+    { year: 'Y8',  p: 100, o: 240, r: 150 },
+    { year: 'Y9',  p: 75,  o: 260, r: 165 },
+    { year: 'Y10', p: 50,  o: 275, r: 175 },
+  ];
+  var chartEl = document.getElementById('jChart');
+  chartData.forEach(function (d) {
+    var total = d.p + d.o + d.r;
+    var pct = (total / 500) * 100;
+    var col = document.createElement('div');
+    col.className = 'chart-col';
+    var stack = document.createElement('div');
+    stack.className = 'chart-stack';
+    stack.style.height = Math.max(pct, 2) + '%';
+    ['r','o','p'].forEach(function (k) {
+      if (d[k] <= 0) return;
+      var bar = document.createElement('div');
+      bar.className = k === 'r' ? 'bar-r' : k === 'o' ? 'bar-o' : 'bar-p';
+      bar.style.flex = d[k];
+      bar.style.minHeight = '4px';
+      stack.appendChild(bar);
+    });
+    var tip = document.createElement('div');
+    tip.className = 'chart-tip';
+    tip.innerHTML = '<div class="chart-tip-val">$' + total + 'K</div><div class="chart-tip-lbl">' + d.year + ' Total</div>' +
+      (d.p ? '<div class="chart-tip-lbl">Personal: $' + d.p + 'K</div>' : '') +
+      (d.o ? '<div class="chart-tip-lbl">Override: $' + d.o + 'K</div>' : '') +
+      (d.r ? '<div class="chart-tip-lbl">Renewals: $' + d.r + 'K</div>' : '');
+    stack.appendChild(tip);
+    var lbl = document.createElement('div');
+    lbl.className = 'chart-xlabel';
+    lbl.textContent = d.year;
+    col.appendChild(stack);
+    col.appendChild(lbl);
+    chartEl.appendChild(col);
+  });
+
+  // APPLY FORM
+  window.submitApply = function () {
+    var first = document.getElementById('af-first').value.trim();
+    var last = document.getElementById('af-last').value.trim();
+    var email = document.getElementById('af-email').value.trim();
+    var phone = document.getElementById('af-phone').value.trim();
+    var state = document.getElementById('af-state').value;
+    var licensed = document.getElementById('af-licensed').value;
+    var goal = document.getElementById('af-goal').value;
+    var msg = document.getElementById('af-message').value.trim();
+    if (!first || !email || !phone || !state || !licensed || !goal) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    var btn = event.target;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    fetch(SHEET_URL, {
+      method: 'POST', mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ timestamp: new Date().toISOString(), firstName: first, lastName: last, email: email, phone: phone, state: state, licensed: licensed, goal: goal, message: msg, source: 'DFG Agent Application - /join' })
+    }).catch(function () {}).finally(function () {
+      document.getElementById('applyFormWrap').style.display = 'none';
+      document.getElementById('applySuccess').style.display = 'block';
+    });
+  };
+})();
+</script>
+</body>
+</html>
