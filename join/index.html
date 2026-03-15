@@ -55,6 +55,15 @@
     .hero-vp-title { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 5px; letter-spacing: .01em; }
     .hero-vp-desc { font-size: 12px; color: var(--text-muted); line-height: 1.65; }
 
+
+    /* ── WORK STYLE TOGGLE ── */
+    .ws-toggle { display: flex; gap: 0; border: 1px solid rgba(201,164,106,.2); border-radius: 3px; overflow: hidden; margin-bottom: 0; }
+    .ws-btn { flex: 1; padding: 10px 8px; font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: transparent; border: none; color: rgba(237,233,223,.4); cursor: pointer; transition: all .25s ease; text-align: center; border-right: 1px solid rgba(201,164,106,.15); }
+    .ws-btn:last-child { border-right: none; }
+    .ws-btn.active { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: #07070E; }
+    .ws-btn:not(.active):hover { background: rgba(201,164,106,.08); color: var(--gold); }
+    .ws-context { font-size: 12px; color: var(--text-muted); line-height: 1.65; padding: 14px 24px; border-top: 1px solid rgba(201,164,106,.07); background: rgba(201,164,106,.03); min-height: 72px; transition: opacity .25s ease; }
+
     /* NAV */
     #jnav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; transition: all .4s; }
     #jnav.scrolled { background: rgba(7,7,14,.96); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(201,164,106,.1); }
@@ -295,10 +304,15 @@
       </div>
       <div class="hero-right anim d3">
         <div style="background:var(--bg3);border:1px solid rgba(201,164,106,.15);border-radius:3px;overflow:hidden;">
-          <div style="padding:20px 24px 16px;border-bottom:1px solid rgba(201,164,106,.1);">
-            <div style="font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:4px">What you get at DFG</div>
-            <div style="font-size:12px;color:var(--text-dim)">From day one — no exceptions.</div>
+          <div style="padding:16px 24px 14px;border-bottom:1px solid rgba(201,164,106,.1);">
+            <div style="font-size:10px;font-weight:600;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:10px">How do you want to work?</div>
+            <div class="ws-toggle">
+              <button class="ws-btn active" data-mode="remote" onclick="setWorkStyle('remote', this)">🌐 100% Remote</button>
+              <button class="ws-btn" data-mode="hybrid" onclick="setWorkStyle('hybrid', this)">🔄 Hybrid</button>
+              <button class="ws-btn" data-mode="office" onclick="setWorkStyle('office', this)">🏢 In-Office · Troy</button>
+            </div>
           </div>
+          <div class="ws-context" id="wsContext">Work from anywhere in the country. All you need is a laptop, a headset, and a strong WiFi connection. Our top producers dial from home offices, coffee shops, and everywhere in between. Zero commute. Full income.</div>
           <div class="hero-vp-item">
             <div class="hero-vp-icon">💰</div>
             <div>
@@ -664,6 +678,24 @@
     entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.anim:not(.in)').forEach(function (el) { io.observe(el); });
+
+
+  // ── WORK STYLE TOGGLE ──
+  var wsMessages = {
+    remote: 'Work from anywhere in the country. All you need is a laptop, a headset, and a strong WiFi connection. Our top producers dial from home offices, coffee shops, and everywhere in between. Zero commute. Full income.',
+    hybrid: 'Split your time however works for you. Come into our Troy, MI office for training sessions, team huddles, and accountability — then work remotely the rest of the week. The best of both worlds.',
+    office: 'Based in Troy, MI? Work alongside the leadership team in person. Daily team energy, live coaching from producers who are actively dialing, and direct access to Mark and Brandon. A serious environment for serious producers.'
+  };
+  window.setWorkStyle = function(mode, btn) {
+    document.querySelectorAll('.ws-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    var ctx = document.getElementById('wsContext');
+    ctx.style.opacity = '0';
+    setTimeout(function() {
+      ctx.textContent = wsMessages[mode];
+      ctx.style.opacity = '1';
+    }, 150);
+  };
 
   // MOBILE MENU
   window.openJMobile = function () { document.getElementById('jMobileMenu').classList.add('open'); document.body.style.overflow = 'hidden'; };
